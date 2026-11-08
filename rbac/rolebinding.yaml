@@ -1,0 +1,13 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: devoir2-lecteur
+  namespace: travelo
+subjects:
+  - kind: ServiceAccount
+    name: devoir2-account
+    namespace: travelo
+roleRef:
+  kind: Role
+  name: travelo-lecteur
+  apiGroup: rbac.authorization.k8s.io
